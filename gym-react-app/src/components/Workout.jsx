@@ -12,7 +12,7 @@ function Workout(props) {
         <div className='flex flex-col gap-4'>
           {workout.map((exercise, exerciseIndex) => {
             return (
-              <ExerciseCard exercise={exercise} key={exerciseIndex}>
+              <ExerciseCard exercise={exercise} index={exerciseIndex} key={exerciseIndex}>
 
               </ExerciseCard>
             )
