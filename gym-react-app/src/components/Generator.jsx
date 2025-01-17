@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SCHEMES, WORKOUTS } from '../utils/slowdier';
+import { SCHEMES, WORKOUTS } from '../utils/swoldier';
 import SectionWrapper from './SectionWrapper';
 import Button from './Button';
 
@@ -19,12 +19,10 @@ function Header(props) {
     )
 }
 
-function Generator() {
+function Generator(props) {
+    const {muscles, setMuscles, poison, setPoison, goal, setGoal, updateWorkout} = props;
 
     const [showModel, setShowModel] = useState(false);
-    const [poison, setPoison] = useState('individual');
-    const [muscles, setMuscles] = useState([]);
-    const [goals, setGoal] = useState('strength_power');
 
     function handleToggleModel() {
         setShowModel(!showModel);
@@ -104,7 +102,7 @@ function Generator() {
                 index='03' 
                 title='Become Juggernaut' 
                 description='Select your ultimate objective!' />
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
                 {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
                         return (
                             <button onClick={() => {
@@ -112,7 +110,7 @@ function Generator() {
                             }} 
                                 className={
                                     'bg-slate-950 border py-3 rounded-lg duration-200 hover:border-blue-600 ' + 
-                                    (scheme === goals ? 'border-blue-600' : 'border-blue-400')
+                                    (scheme === goal ? 'border-blue-600' : 'border-blue-400')
                                 } 
                                 key={schemeIndex}
                             >
@@ -122,7 +120,7 @@ function Generator() {
                         )
                     })}
                 </div>
-            <Button>
+            <Button func={updateWorkout}>
                 Formulate
             </Button>
         </SectionWrapper>
