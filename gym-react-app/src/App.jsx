@@ -19,6 +19,8 @@ function App() {
     console.log(newWorkout);
     
     setWorkout(newWorkout);
+
+    window.location.href = '#workout'
   }
 
   return (

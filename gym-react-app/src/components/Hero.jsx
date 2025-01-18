@@ -15,7 +15,9 @@ function Hero() {
              and accept all risks of becoming the local 
              <span className='text-blue-400 font-medium'>mass montrosity</span>
              , afflicted with severe body dismorphia, unable to fit through doors.</p>
-        <Button>
+        <Button func={() => {
+          window.location.href = '#generate'
+        }}>
           Accept and Begin
         </Button>
     </div>

@@ -7,6 +7,7 @@ function Workout(props) {
 
   return (
     <SectionWrapper 
+      id={'workout'}
       header='Welcome to'
       title={['The', 'DANGER', 'zone']} >
         <div className='flex flex-col gap-4'>
